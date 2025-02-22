@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local AI GUI</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- Highlight.js CSS for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+  <!-- Include Marked.js for Markdown parsing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+  <!-- Include Highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left-nav">
+          <div class="avatar">R1</div>
+          <h2>MedSync AI Chatbot</h2>
+          <div class="donation-links">
+            <a href="https://paypal.me/l8rontop" target="_blank">Donate</a>
+            <a href="https://x.com/qusaismael" target="_blank">Twitter</a>
+          </div>
+        </div>
+        <div class="right-nav">
+          <select id="modelSelect">
+            {% for model in models %}
+              <option value="{{ model }}">{{ model }}</option>
+            {% endfor %}
+          </select>
+          <button id="newChatBtn">+ New Chat</button>
+        </div>
+      </div>
+        <div class="main-container">
+    <div class="sidebar">
+      <h3>MedSync</h3>
+      <ul id="chatList">
+        <!-- Chat list items will be populated here -->
+      </ul>
+    </div>
+    <div class="chat-layout">
+      <div class="chat-window" id="chatWindow">
+        <!-- Chat messages will appear here -->
+      </div>
+      <div class="input-area">
+        <textarea id="userInput" placeholder="Type your message here..."></textarea>
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      hljs.highlightAll();
+    });
+  </script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
