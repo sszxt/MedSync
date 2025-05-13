@@ -1,0 +1,435 @@
+
+/* ===========================
+   MedSync AI - Modern Interface
+   =========================== */
+
+:root {
+  /* Main Colors */
+  --primary: #2563eb;      /* Medical blue */
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --success: #10b981;      /* Green for successful operations */
+  --error: #ef4444;        /* Red for errors */
+  
+  /* Background Colors */
+  --bg-main: #ffffff;      /* Light theme background */
+  --bg-sidebar: #f9fafb;
+  --bg-navbar: #f3f4f6;
+  --bg-input: #f3f4f6;
+  
+  /* Chat Message Colors */
+  --msg-user-bg: #e8f4fd;
+  --msg-user-text: #1e3a8a;
+  --msg-assistant-bg: #f8fafc;
+  --msg-assistant-text: #0f172a;
+  --msg-border: #e5e7eb;
+  
+  /* Text Colors */
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+  
+  /* UI Elements */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --transition: 0.2s ease;
+  
+  /* Font */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg-main);
+  color: var(--text-primary);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: var(--bg-navbar);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--msg-border);
+}
+
+.left-nav, .right-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.navbar h2 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.donation-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.donation-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color var(--transition);
+}
+
+.donation-links a:hover {
+  color: var(--primary);
+}
+
+/* Main Layout */
+.main-container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background: var(--bg-sidebar);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--msg-border);
+}
+
+.sidebar h3 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--msg-border);
+}
+
+#chatList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+#chatList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-main);
+  border: 1px solid var(--msg-border);
+  transition: all var(--transition);
+}
+
+#chatList li:hover {
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-sm);
+}
+
+#chatList li span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#chatList li button {
+  padding: 0.25rem 0.5rem;
+  background: var(--bg-input);
+  border: 1px solid var(--msg-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+#chatList li button:hover {
+  background: var(--error);
+  color: white;
+  border-color: var(--error);
+}
+
+/* Model Selection & New Chat Button */
+select#modelSelect {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--msg-border);
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+select#modelSelect:focus {
+  border-color: var(--primary);
+}
+
+button#newChatBtn {
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+button#newChatBtn:hover {
+  background: var(--primary-dark);
+}
+
+/* Chat Area */
+.chat-layout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-main);
+}
+
+.chat-window {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message Styling */
+.message {
+  margin-bottom: 1.5rem;
+  max-width: 90%;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message.user {
+  align-self: flex-end;
+}
+
+.message.assistant {
+  align-self: flex-start;
+}
+
+.message p {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: var(--shadow-sm);
+}
+
+.message.user p {
+  background-color: var(--msg-user-bg);
+  color: var(--msg-user-text);
+  border-bottom-right-radius: 0;
+}
+
+.message.assistant p {
+  background-color: var(--msg-assistant-bg);
+  color: var(--msg-assistant-text);
+  border: 1px solid var(--msg-border);
+  border-bottom-left-radius: 0;
+}
+
+/* Formatted Content */
+.formatted-content {
+  width: 100%;
+}
+
+/* Code Highlighting */
+.message pre {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: #f8f9fa;
+  overflow-x: auto;
+  border: 1px solid #e9ecef;
+}
+
+.message code {
+  font-family: 'Fira Code', 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+}
+
+/* Streaming Indicator */
+.streaming {
+  display: inline-block;
+  animation: blink 1s infinite;
+  margin-left: 0.25rem;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Input Area */
+.input-area {
+  display: flex;
+  padding: 1rem 1.5rem;
+  gap: 0.75rem;
+  background: var(--bg-main);
+  border-top: 1px solid var(--msg-border);
+}
+
+#userInput {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+  border: 1px solid var(--msg-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  resize: none;
+  min-height: 52px;
+  max-height: 150px;
+  transition: border-color var(--transition);
+}
+
+#userInput:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+#sendBtn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--radius-lg);
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: background-color var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sendBtn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    max-height: 150px;
+    border-right: none;
+    border-bottom: 1px solid var(--msg-border);
+  }
+  
+  .chat-window {
+    padding: 1rem;
+  }
+  
+  .message {
+    max-width: 95%;
+  }
+}
+
+/* Dark Mode Support - Optional */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: #0f172a;
+    --bg-sidebar: #1e293b;
+    --bg-navbar: #1e293b;
+    --bg-input: #1e293b;
+    
+    --msg-user-bg: #1d4ed8;
+    --msg-user-text: #e0f2fe;
+    --msg-assistant-bg: #334155;
+    --msg-assistant-text: #f8fafc;
+    --msg-border: #334155;
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-light: #94a3b8;
+  }
+  
+  select#modelSelect, #userInput {
+    background: var(--bg-input);
+    color: var(--text-primary);
+  }
+  
+  .message.assistant p {
+    border-color: #475569;
+  }
+  
+  .message pre {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  
+  .message code {
+    color: #e2e8f0;
+  }
+}
