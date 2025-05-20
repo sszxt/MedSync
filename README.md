@@ -87,4 +87,4 @@ medsync/
 This is a college final‑year project. Contributions from peers, mentors, and educators are welcome—please submit issues or pull requests.
 
 
-*Developed by Mohamed Sameer & Muhammed Aakif
+Developed by Mohamed Sameer & Muhammed Aakif
