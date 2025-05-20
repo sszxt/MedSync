@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+/* Global Styling for tab tracker*/
+.app {
+  @apply min-h-screen bg-gray-100 font-sans;
+}
+
+.app-header {
+  @apply bg-indigo-600 text-white p-6 text-center;
+}
+
+.app-header h1 {
+  @apply text-3xl font-semibold;
+}
+
+.app-header p {
+  @apply text-lg;
+}
+
+.tabs {
+  @apply flex justify-center gap-8 bg-indigo-600 p-4;
+}
+
+.tabs button {
+  @apply text-white text-lg px-4 py-2 rounded-lg focus:outline-none;
+}
+
+.tabs button.active {
+  @apply bg-indigo-800;
+}
+
+.main-content {
+  @apply p-6;
+}
+
+/* Dashboard Styling */
+.dashboard {
+  @apply p-6 bg-white shadow-lg rounded-lg;
+}
+
+.dashboard h2 {
+  @apply text-2xl font-semibold mb-6;
+}
+
+.stats-cards {
+  @apply grid grid-cols-3 gap-6 mb-8;
+}
+
+.stat-card {
+  @apply bg-blue-100 p-4 rounded-lg shadow-lg text-center;
+}
+
+.stat-value {
+  @apply text-xl font-bold text-blue-500;
+}
+
+.charts {
+  @apply flex gap-8;
+}
+
+.adherence-chart, .medication-distribution {
+  @apply p-4 bg-gray-100 rounded-lg shadow-lg;
+}
+
+/* Tracker Component Styling */
+.tracker {
+  @apply p-6 bg-white shadow-lg rounded-lg;
+}
+
+.add-tablet-form {
+  @apply space-y-4 mb-6;
+}
+
+.add-tablet-form input {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.add-tablet-form button {
+  @apply bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none;
+}
+
+.medication-cards {
+  @apply grid grid-cols-1 gap-6 mt-6;
+}
+
+.medication-card {
+  @apply p-4 bg-gray-50 rounded-lg shadow-lg flex justify-between items-center;
+}
+
+.medication-info {
+  @apply space-y-2;
+}
+
+.medication-info h3 {
+  @apply text-xl font-semibold;
+}
+
+.medication-info p {
+  @apply text-gray-600;
+}
+
+.medication-card button {
+  @apply bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none;
+}
+
+/* Reminders Component Styling */
+.reminders {
+  @apply p-6 bg-white shadow-lg rounded-lg;
+}
+
+.upcoming-reminders, .all-reminders {
+  @apply mb-6;
+}
+
+h3 {
+  @apply text-xl font-semibold mb-4;
+}
+
+.reminder-card {
+  @apply p-4 bg-gray-50 rounded-lg shadow-lg mb-4;
+}
+
+.reminder-card.urgent {
+  @apply bg-red-100 border-l-4 border-red-500;
+}
+
+.reminder-time {
+  @apply text-lg font-semibold text-gray-800;
+}
+
+.reminder-details {
+  @apply mt-2;
+}
+
+.reminder-details h4 {
+  @apply text-lg font-semibold;
+}
+
+.reminder-actions {
+  @apply mt-4 flex gap-4;
+}
+
+.reminder-actions button {
+  @apply py-2 px-4 rounded-lg focus:outline-none;
+}
+
+.snooze-button {
+  @apply bg-yellow-500 text-white hover:bg-yellow-600;
+}
+
+.taken-button {
+  @apply bg-green-500 text-white hover:bg-green-600;
+}
+
+.status-badge {
+  @apply inline-block text-xs font-semibold uppercase rounded-full px-3 py-1 mt-2;
+}
+
+.status-badge.pending {
+  @apply bg-yellow-300 text-yellow-800;
+}
+
+.status-badge.completed {
+  @apply bg-green-300 text-green-800;
+}
+
+/* History Component Styling */
+.history {
+  @apply p-6 bg-white shadow-lg rounded-lg;
+}
+
+.history h2 {
+  @apply text-2xl font-semibold mb-6;
+}
+
+.history-table-container {
+  @apply overflow-x-auto;
+}
+
+.history-table {
+  @apply min-w-full table-auto border-collapse;
+}
+
+.history-table th, .history-table td {
+  @apply px-4 py-2 border border-gray-200 text-left;
+}
+
+.history-table th {
+  @apply bg-blue-600 text-white;
+}
+
+.history-table td {
+  @apply text-gray-700;
+}
+
+.history-table .status-badge {
+  @apply inline-block px-2 py-1 rounded-lg;
+}
+
+.history-table .status-badge.taken {
+  @apply bg-green-100 text-green-600;
+}
+
+.history-table .status-badge.missed {
+  @apply bg-red-100 text-red-600;
+}
+
+/* TabletTracker Component Styling */
+.app-header {
+  @apply text-4xl font-bold text-center text-gray-800;
+}
