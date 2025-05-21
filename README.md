@@ -85,8 +85,8 @@
 ## Project Structure
 
 ```bash
-.
-├── backend/                  # Node.js backend (Express)
+
+├── backend/                 # Node.js backend (Express)
 │   ├── config/              # Configuration files (DB, app settings)
 │   ├── controllers/         # Route logic (auth, file, health, meds, users)
 │   ├── middleware/          # Custom Express middleware
