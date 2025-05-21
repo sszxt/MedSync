@@ -26,3 +26,16 @@ This module powers the **Medical AI Assistant** in MedSync using a **locally hos
 
 ---
 
+## Project Structure
+
+``` structure
+├── .vscode/ # VS Code specific settings
+├── flask_session/ # Session data for Flask
+├── static/ # Static files (CSS, JS, images, etc.)
+├── templates/ # HTML templates for Flask
+├── LICENSE # License file
+├── README.md # Project documentation
+├── app.py # Main Flask application
+├── medquad.csv # CSV data file [ Medical related Question ]
+```
+
