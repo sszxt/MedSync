@@ -1,33 +1,52 @@
 # MedSync
 
-**MedSync** is a secure, blockchain‑backed platform for storing and managing medical records and information. Designed as a final‑year college project, it combines distributed ledger technology with AI‑powered medical assistance to ensure safety, privacy, and convenience for patients and healthcare providers.
+**MedSync** is a secure, blockchain‑backed platform for storing and managing medical records and health information. Designed as a final‑year college project, it integrates distributed ledger technology with AI-powered healthcare assistance to ensure **privacy, security, and accessibility** for patients and healthcare providers alike.
 
-## 🏆 Project Highlights
+---
 
-* **Blockchain Security**: Immutable storage of patient records on a decentralized network.
-* **Medical AI Assistant**: Natural language interface for answering medical questions.
-* **Hospital Finder**: Geolocation‑based search to locate nearby hospitals and clinics.
-* **Prescription & Medication Tracker**: Tools to manage prescriptions, track dosages, and schedule reminders.
-* **Privacy & Compliance**: Role‑based access control, end‑to‑end encryption, and audit logs.
+## Project Highlights
 
-## Features
+-  **Blockchain Security**  
+  Immutable, tamper-proof medical record storage via decentralized networks.
 
-| Module                   | Description                                                 |
-| ------------------------ | ----------------------------------------------------------- |
+- **Medical AI Assistant**  
+  Natural language chatbot interface for answering health-related queries.
+
+- **Hospital Finder**  
+  Geolocation-based search to locate nearby hospitals and clinics.
+
+- **Prescription & Medication Tracker**  
+  Manage prescriptions, track dosage schedules, and set reminders.
+
+- **Privacy & Compliance**  
+  Role-based access control, end-to-end encryption, and secure audit logs.
+
+---
+
+## Features Overview
+
+| Feature                   | Description                                                 |
+|--------------------------|-------------------------------------------------------------|
 | **Record Storage**       | Store and retrieve patient data using smart contracts.      |
-| **Medical AI**           | Ask medical‑related queries powered by a trained AI model.  |
-| **Hospital Finder**      | Find and view details of nearby medical facilities.         |
-| **Prescription Tracker** | Log prescriptions, set dosage reminders, and track history. |
-| **Medication Tracker**   | Monitor medication intake and adherence.                    |
+| **Medical AI**           | NLP-based assistant for medical-related queries.            |
+| **Hospital Finder**      | Maps integration to find medical facilities nearby.         |
+| **Prescription Tracker** | Log prescriptions, set dosage reminders, and view history.  |
+| **Medication Tracker**   | Monitor adherence and intake patterns.                      |
+
+---
 
 ## Tech Stack
 
-* **Backend**: Python, FastAPI, Web3.py
-* **Blockchain**: Ethereum (Ganache for local development)
-* **Smart Contracts**: Solidity, Truffle
-* **AI Module**: TensorFlow / PyTorch NLP model
-* **Frontend**: React, Bootstrap
-* **Database**: IPFS (off‑chain file storage)
+| Layer         | Technologies                              |
+|---------------|-------------------------------------------|
+| **Frontend**  | React, Vite, Bootstrap                    |
+| **Backend**   | Node.js, Express, FastAPI (secondary AI) |
+| **AI Module** | TensorFlow / PyTorch (NLP model)         |
+| **Blockchain**| Ethereum, Solidity, Truffle, Ganache     |
+| **Storage**   | IPFS (off‑chain), MongoDB                |
+| **Tools**     | Web3.js, Web3.py, Pinata                 |
+
+---
 
 ## Getting Started
 
@@ -51,6 +70,8 @@
    npm run dev
    ```
 
+---
+
 ## Usage
 
 1. Register as a patient or provider.
@@ -59,32 +80,53 @@
 4. Use the Hospital Finder map to search for facilities.
 5. Add and manage prescriptions and medication schedules.
 
+---
+
+
 ## Project Structure
 
-````plaintext
-medsync/
-├── blockchain/          # Smart contracts, migrations, and artifacts
-├── public/              # Static assets and index.html
-├── server/              # FastAPI backend server (or Node/Express if applicable)
-│   ├── main.py          # Entry point for API
-│   └── ...              # Other server modules
-├── src/                 # Frontend React/Vite application source code
-│   ├── App.jsx          # Main React component
-│   └── ...              # Other React components and pages
-├── .env                 # Environment variables for dev and production
-├── .gitignore           # Git ignore rules
-├── README.md            # Project documentation
-├── eslint.config.js     # Linting configuration
-├── package.json         # Frontend & dev scripts dependencies
-├── package-lock.json    # Locked dependency versions
-├── pull.bat             # Windows script to fetch updates
-├── push.bat             # Windows script to push changes
-└── vite.config.js       # Vite build and dev server configuration
-````
+```bash
+.
+├── backend/                  # Node.js backend (Express)
+│   ├── config/              # Configuration files (DB, app settings)
+│   ├── controllers/         # Route logic (auth, file, health, meds, users)
+│   ├── middleware/          # Custom Express middleware
+│   ├── models/              # Mongoose models (MongoDB)
+│   ├── routes/              # API route definitions
+│   ├── services/            # Email and IPFS services
+│   ├── utils/               # Helpers, validators, error handling
+│   └── server.js            # Entry point of the backend server
+│
+├── blockchain/              # React component for Pinata uploads
+│   └── PinataUploader.jsx
+│
+├── public/                  # Static assets
+│   └── *.jpeg, *.svg
+│
+├── server/                  # Secondary backend (possibly chatbot or legacy)
+│   ├── models/              # Additional models
+│   └── index.js             # Entry for this server
+│
+├── src/                     # React frontend source code
+│   ├── components/          # Reusable UI components
+│   ├── pages/               # Page-level components (Dashboard, Login, etc.)
+│   ├── context/             # React context (AuthContext)
+│   ├── route/               # Route protection
+│   └── main.jsx             # React app entry
+│
+├── index.html               # Main HTML file
+├── vite.config.js           # Vite configuration
+├── eslint.config.js         # ESLint configuration
+├── package.json             # Root dependencies
+├── push.bat / pull.bat      # Git helpers for Windows
+└── README.md                # You're reading it now!
+```
+
+---
+
 
 ## Contributing
 
-This is a college final‑year project. Contributions from peers, mentors, and educators are welcome—please submit issues or pull requests.
+This project was developed as part of a final year college curriculum. Contributions from peers, mentors, and educators are highly encouraged. If you'd like to suggest improvements or report issues, feel free to open an issue or submit a pull request.
 
-
-Developed by Mohamed Sameer & Muhammed Aakif
+Developed by Mohamed Sameer and Muhammed Aakif.
