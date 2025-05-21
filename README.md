@@ -25,13 +25,12 @@
 
 ## Features Overview
 
-| Feature                   | Description                                                 |
+| Feature                  | Description                                                 |
 |--------------------------|-------------------------------------------------------------|
 | **Record Storage**       | Store and retrieve patient data using smart contracts.      |
 | **Medical AI**           | NLP-based assistant for medical-related queries.            |
 | **Hospital Finder**      | Maps integration to find medical facilities nearby.         |
-| **Prescription Tracker** | Log prescriptions, set dosage reminders, and view history.  |
-| **Medication Tracker**   | Monitor adherence and intake patterns.                      |
+| **Medication Tracker**   | Log prescriptions, Monitor adherence and intake patterns.   |
 
 ---
 
@@ -40,11 +39,11 @@
 | Layer         | Technologies                              |
 |---------------|-------------------------------------------|
 | **Frontend**  | React, Vite, Bootstrap                    |
-| **Backend**   | Node.js, Express, FastAPI (secondary AI) |
-| **AI Module** | TensorFlow / PyTorch (NLP model)         |
-| **Blockchain**| Ethereum, Solidity, Truffle, Ganache     |
-| **Storage**   | IPFS (off‑chain), MongoDB                |
-| **Tools**     | Web3.js, Web3.py, Pinata                 |
+| **Backend**   | Node.js, Express                          |
+| **AI Module** | TensorFlow / PyTorch (NLP model)          |
+| **Blockchain**| Ethereum, Solidity, Pinata                |
+| **Storage**   | IPFS (off‑chain), MongoDB                 |
+
 
 ---
 
@@ -72,13 +71,13 @@
 
 ---
 
-## Usage
+## Usage Instructions
 
 1. Register as a patient or provider.
-2. Upload or view medical records—securely stored on the blockchain.
-3. Interact with the Medical AI Assistant via chat input.
-4. Use the Hospital Finder map to search for facilities.
-5. Add and manage prescriptions and medication schedules.
+2. Upload or view encrypted medical records stored on the blockchain.
+3. Chat with the AI Assistant to ask medical questions.
+4. Locate hospitals nearby using the map-based finder.
+5. Manage medication by tracking schedules and prescriptions..
 
 ---
 
